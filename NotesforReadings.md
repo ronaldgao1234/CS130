@@ -1,11 +1,9 @@
 # Notes for Readings CS130
 
 [link to eggert spring 2018 homework page](http://web.cs.ucla.edu/classes/spring18/cs130/syllabus.html)
-> I'm going to be using the following syntax:
 > Mc = McConnell Chapters
 > Som = Sommerville Chapters
-> Went off lanqingwei's notes for relevant topics covered by sommerville cuz sommerville is too boring.
-> The notes for the readings are complete for everything after the midterm. On the midterm, mostly main concepts like design pattern, architectures, UML diagrams and system perturbers were tested. So taking notes was a little bit useless.
+
 ## _Week 1 Monday 4/04/2018 Mc 1,3-3.4 Som 1,4_
 ============================================================
 ### **McConnell Chapter 1 Welcome to Software Construction**
@@ -131,8 +129,24 @@ system requirements: could be between client and company
 stakeholders: anyone who has a stake or claim. could be any1
 
 Functional vs non-functional page 105
+Non functional requirements:
+- Performance
+- Scalability
+- Capacity
+- Availability
+- Reliability
+- recoverability
+- maintainability
+- serviceability
+- Security
+- regulatory
+- manageability
+- Environmental
+- data integrity
+- usability
+- Interoperability
 
-lanqingwei's notes does this part well.
+A robust system has to be reliable. but not opposite.
 #### *Requirements Elicitation*
 Interviews sometimes can't do well because u can't understand the specialist
 
@@ -160,7 +174,7 @@ make sure its right
 Requirements change, requirements evolution, requirements management
 **systems developed incrementally typically have less detailed requirements**
 
-## _Week 2 Wednesday 4/11/2018 Mc 2,21 Som 2-3_
+## _Software Process Models Mc 2,21 Som 2-3_
 ============================================================
 ### **Mcconnell Chaper 2 Metaphors**
 metaphor more like heuristic
@@ -230,44 +244,93 @@ Planning , overview, preparation, inspection meeting , inspection report, rework
 -show product
 
 ### **Sommerville Chapter 2 Software Process Models**
+3 types basically:
+1. Waterfall model
+2. Incremental development
+3. Integration and configuration. Reusing other stuff
 
 2.1 Waterfall Model page 47
-2.1.2 incremental development
-  3 advantages over waterfall page 50
-  2 managerial disadvan
-  - does not mean u incrementally reveal to customer
-2.1.3 integration and configuration
-reuse step included : 3 things commonly reused page 52
+  - Inflexible partitioning of the project into stages makes it hard to change to customer requirements
+  - only good requirements are well understood
+  - mostly used for large systems
 
-2.2 process activities
-2.2.1 Software specification
-2.2.2 Software design and implementation
-2.2.3 Software validation
-2.2.4 Software evolution
-2.3 Coping with Change
-  2.3.1 Prototyping
-  - early version of a software system that is used ot demonstrate concepts...
-  - test feasibility
-  2.3.2 Incremental Delivery Page 64 Som
-  4 advantages
-  3 disadvantage
+2.1.2 Incremental development
+
+Advantages over Waterfall:
+- cost of changing requirements is less
+- easier to get customer feedback
+- faster deliver and depoloyment
+
+Disadvantages:
+  - Process not visible to managers
+  - structure tends to degrade as increments are added
+
+
+2.1.3 integration and configuration
+- Reducing the cost of rework
+  - change anticipation: prototype
+  - Change tolerance: change met with low cost. usually incremental development. only change small increment
+
+Prototyping Benefits
+- Improved system usability
+- a closer match to customer real needs
+- improved design quality
+- improved maintainability
+- reduced development effort
+reuse step included : 3 things commonly reused page 52
+2.3.2 Incremental Delivery Page 64 Som
+Advantages:
+- Deploy earlier
+- lower risk of project fail
+
+Disadvantages:
+- most systems require a set of basic facilities that are used by different parts of the system
+- The essence of iterative processes is that the specification is developed in conjunction with the sotware which conflicts with the procurement model of many organizations
+
 2.4 Process Improvement
 
 ### *Sommerville Chapter 3 Agile software Development*
 Agile: page 76
+
 XP: page 77
+- New versions may be built several times per da
+- increments are delivered to customers eveery 2 weeks
+- All tests must be run for every uild and the build is only accepted if tests run successfully
+- Original model not widely used. Key practices: User stories, refactoring, test-first development, pair programming
+-
 refactoring: page 80
+
 Test-first development: page 81
+
+Problems:
+- programmers are lazy
+- hard to write incrementally
+- hard to judge if ur tests are complete
+-
 Pair programming: page 83
+
 Scrum: page 85
+
 Scaling agile methods: page 88
+- agile methods good for new software development but most costs come from software maintenance for large company
+- contract issues: Most contracts specify what needs to be done and doesn't just specify how much time to give to developer
+- Key problems: lack of docmentation, **maintainenance**, keeping customers in development process,
+-
 Problems with agile: page 89
+
 agile and plan-driven methods: page 91
+
 Agile for large systems: 93
+- large systems are **brownfield systems** that include a numbeer of existing systems
+
+Large Systems
+- more rules and regulations
+- long procurement and development time
+- disadvanterse stakeholders
 
 ## _Week 2 Monday 4/16/2018 Som 5 19 20_
 ============================================================
-## **Chapter 5 System modeling and engineering**
+### **Chapter 5 System modeling and engineering**
 Discussion:
 Types of UML Diagrams:
 - behavioral modeling:
@@ -278,77 +341,94 @@ Types of UML Diagrams:
     - class diagram, component diagram
 
 UML diagramas that are covers.
-1. Use case diagrams - Describe the functional behavior of the system as seen by the user
+1. Use case diagrams - Describe the **functional** behavior of the system as seen by the user
 2. Class diagrams - describe the static structure of the system: Objects, Attribute, Associtation
 3. Sequence diagram - describe the dynamic behavior between actors and the system between objects and the system
 4. Statechart diagrams - describe the dynamic behavior of an individual object (essentiall a fini state automaton)
-5. Activity Diagrams - Model the dynamic behavior of a system, in particular the workflow (flowchart)
+5. Activity Diagrams - Model the dynamic behavior of a system, in particular the workflow (flowchart). specific type of statechart diagram
 
-Context Models
-Interaction Model
-Structural models
-Behavioral Models: many business systems
-Model-driven architecture
-	1. CIM - computation independent model
-	2. PIM - platform independent model (no implementation)
-	3. PSM - platform specific model
-	-Companies don't want to take MDA approach because they have to develop their own tools
-	-for bigger companies, less benefit
-	-adoption of agile over the times has allowed for diverting away from MDA
+Model-driven architecture(MDA)
+1. CIM - computation independent model
+2. PIM - platform independent model (no implementation)
+3. PSM - platform specific model
 
-Just use discussion notes
+- Companies don't want to take MDA approach because they have to develop their own tools
+- for bigger companies, less benefit
+- adoption of agile over the times has allowed for diverting away from
 
 Context model: page 141
 Interaction Models: page 144
 
-## **Chapter 19 Som**
+### **Chapter 19 Som**
 Inter-disciplinary working:
-		-communication problem
-		-different assumption
-		-professional boundaries
-Sociotechnical systems: includes people and technical
-	-boundaries are subjective. generally used in organizations
-	-**emergent properties**: depends on system, consequence of relationship between system components
-		-can only be measured after components are included
-		-Reliability, Repairability, Security, Usability, Volume
-		-reliability can depend on context(temperature)
-	-**Non-deterministic**: don't always produce same output because of human
-		-Success criteria
-	-Complex relationship with organisational objectives: not only dependent on system
-Conceptual Design: easy
-	-feasiblity study, system structure development, system vision document
-Systems procurement: make the conceptual design
-	-Before procurement: decisions to be made on 1. scope of the system, 2. budget, 3. high level requirements
-	-Approved set of application software; third part don't work
-	-regulations can affect procurement
-Systems development: make the product
-	-usually plan driven because of need for parallel development of different parts of a system
-	-involves different engineers
-	-interface issues
-	-requirements issues
-System operation and evolution: start using it for its intended purpose
-	- do not have to have the solution to everything since human operator. even if automated system
-	-evolution is costly
-	-legacy systems: existing systems that must be maintained
+- communication problem
+- different assumption
+- professional boundaries
 
-## **Chapter 20 Som**
+Sociotechnical systems: includes people and technical
+- boundaries are subjective. generally used in organizations
+- **emergent properties**: depends on system, consequence of relationship between system components
+	- can only be measured after components are included
+	- Reliability, Repairability, Security, Usability, Volume
+	- reliability can depend on context(temperature)
+	- Examples: Reliability, Repairability, Security ...
+  - **Non-deterministic**: don't always produce same output because of human
+  - Success criteria
+  - Complex relationship with organisational objectives: not only dependent on system
+  - Conceptual Design: easy
+  	- feasiblity study, system structure development, system vision document
+
+Systems procurement: make the conceptual design
+- Before procurement: decisions to be made on 1. scope of the system, 2. budget, 3. high level requirements
+- Approved set of application software; third part don't work
+- regulations can affect procurement
+
+Systems development: make the product
+- usually plan driven because of need for parallel development of different parts of a system
+- involves different engineers
+- interface issues
+- requirements issues
+System operation and evolution: start using it for its intended purpose
+- do not have to have the solution to everything since human operator. even if automated system
+- evolution is costly
+- legacy systems: existing systems that must be maintained
+
+### **Chapter 20 Som**
 System Complexity Page 584 Som
 1. technical complexity
 2. managerial complexity
 3. governance complexity
-System of systems classification
+
+System of systems classification More intuitive than Maeier's classification of System of systems
+
+3 classes:
 1. organizational systems
 2. federal systems
 3. system coalitions
-Reductionism and Complex Systems
-- breaks down because of inherent complexity of system of systems
-Systems of systems engineering
-  interface dev
-  integration and deployment
-System of system architecture
-architectural patterns for system of systems
 
-Basically entire chapter is about integration of systems with each other
+Reductionism and Complex Systems:
+- breaks down because of inherent complexity of system of systems
+- agile methods are reductionist. the difference between agile methods and top-down design is that system decomposition is incremental when an agile approach is used
+- reductionist methods are successful when there are relatively few relationships between the parts of a system
+- Reductionist assumptions:
+  - assumes there is controlling authority to resolve disputes
+  - rational decision making
+  - defined system boundaries
+
+reductionism in software system of systems:
+- relationships usually governed by political
+- no physical limitation
+- linking software multiple ppl easy, so more likely no governing authority
+
+System of system problems:
+- different evolution strategies or different assumptions made in different systems
+
+unified user interface expensive and time-consuming to implement
+Rest of the chapter:
+- MODAF, TOGAF
+- System as data feeds data is available from other systems and the principal system querries these systems to get the data required
+- Systems in a container is where one of the systems acts as a virtual container and provides a set of common services such as authentication and storage service
+- Trading system: systems of systems where there is no single principal system but processing may take place in any of the constituent systems
 
 ## _Week 4 Monday 4/18/2018 Mc 3.5, Som 6 17 28_
 ============================================================
@@ -377,39 +457,429 @@ Architectural Feasibility
 	Quality
 
 ### **Sommerville 6 Architectural Design** Page 168
-Architecture in the small  vs large
 Advantages of architecture: Stakeholder communication, System Analysis, Large scale reuse
-Contradiction between architectural model vs industrial practice because therer are 2 ways model of a program is used
+
+Contradiction between architectural model vs industrial practice because there are 2 ways model of a program is used
 1. as a way of encouraging discussion about system design
 2. way of documenting an architecture that has been designed
 
 Architecture depend on non-functional requirements of system: performance, security, safety, availability, maintainability
-	obvious take and give situation going on
+
 4+1 model: logical view, physical view, development view, process view
 hofmeister adds conceptual view, designed during design processes
 
-Argue whether or not should use UML: He likes it: useful when documenting architecture
-MVC
-	advan- independent change
-	disadvan - may involve additional code and complexity
-Layered Architecture: only adjacent layer is affected
-	Advan: dependability, redundancy = authentication
-	disadvan: hard to actually separate
-Repository Architecture:
-	Advan- independent components, backups, think github, changes can go to everyone instantly, efficient sharing
+
+- MVC
+	- advan - independent change
+	- disadvan - may involve additional code and complexity
+- Layered Architecture: only adjacent layer is affected
+	- Advan: dependability, redundancy = authentication
+	- disadvan: hard to actually separate
+- Repository Architecture:
+	- Advan- independent components, backups, think github, changes can go to everyone instantly, efficient sharing
 		of large amounts of data
-	-Disadvant: repo is single point of failure
-Client-server
-	advan- servers distributed across a network
-	disadvan: each service is a single point of failure so suceptible to DOS
-	performance is unpredictable
-Pipe and filter architecture
-	advan: easy to understand
-	disadvant: may have sysetm overhead because u have to have correct format of data transfer
+	- Disadvant: repo is single point of failure
+- Client-server
+	- advan- servers distributed across a network
+	- disadvan: each service is a single point of failure so suceptible to DOS
+	- performance is unpredictable
+- Pipe and filter architecture
+	- advan: easy to understand
+	- disadvant: may have sysetm overhead because u have to have correct format of data transfer
+
+### **Sommerville 17 Distributed systems **
+Attributes:
+- Resource sharing
+- Openness - use oof equipment and software from different vendors
+- concurrency
+- scalability
+- fault tolerance
+
+Models of interaction:
+- Procedural interation, where one computer calls on a known service offered by another computer and waits for a response. Implemented with remote procedure calls(RPC)
+- message-based interaction, involves th sending of computer sending information about what is required to another computer.
+
+Remote procedure calls:
+- one component calls another component as if it was a local procedure or method. middleware in the system intercepts this call and passes it to a remote component
+- this carries out the required computation
+- problem is that the caller and callee both have to be available
+
+Distributed systems have lots of middleware support
+
+Architectural patterns for distributed systems:
+- master-slave architecture, which is used in real-time systems in which guaranteed interacion response times are required
+- 2-tier client-server architecture which is used for simple client-server systems ad where the system is centralized for security reasons
+- multi-tier client-serveer architecutre which is used when there is a high volume of transactions to be processed by the server
+- distributed component architecture which is used when resources from different systems and databases need to be combined or as an implementation model for multi-tier client-serveer systems
+- P2P architecture, which is used when clients exchange locally stored info and the role of the server is to introduce clients to each other
+
+Master-slave:
+- usually slaves just do one task
+
+2-tier client server :
+- **thin-client**: presentation layer is on client side and everything else is on server.
+  - used when legacy systems are migrated to client server architectures.
+  - places heavy load on server
+- **fat-client model**: some of the application processing is on the client. data management and database functions are on the server
+  - more processing is delegated to the client
+  - more suitable for new C/S systems where the capabilites of the client system are known in advance
+  - more complex than a thin client model especially for management
+  - new versions of the application have to be installed on client
+
+Multi-tier client server:
+- different layers namely presentation, data management, application processing, and database are separae processes that may execute on different processors
+- avoids problems with scalability and performance unlike thin-client 2 tier model or problems with system management if a fat-client 2tier model is used
+
+Distributed Component architectures:
+- there is no distinction in a distributed component architecture between client and servers
+- each distributable entity is a component that provides servies to other components and receives services from other components. component communication is through middleware
+
+Benefits:
+- allows the sstem designer to delay decisions on where and how services should be provided
+- it is a very open system architecture that allows new resources to be added as required
+- system is flexible and scalable
+- it is possible to reconfigure the system dynamically with objects migrating across the network as required
+
+Disadvantages:
+
+1. more complex to design than client-serveer
+2. no standardized middle ware
+
+As a result of disadvantages, (SOA) service-oriented architectures are replacing distributed component architectures in many situations.
+
+P2P:
+- computationally intensive system then use p2p
+- use when involve exchange of info between individual computers and there is no need to store the info
+
+Security issues in p2p:
+- lack of central management so nodes can give malware to other nodes in network
+- p2p comm's need good setup to protect local info or else its exposed to peers
+
+Software as a Service:
+- deploed on server. accessed through web
+
+SaaS vs SOA:
+- SaaS: Software as a service is a way of providing functionality
+on a remote server with client access through a web
+browser. The server maintains the user’s data and state
+during an interaction session. Transactions are usually
+long transactions e.g. editing a document.
+- SOA: Service-oriented architecture is an approach to
+structuring a software system as a set of separate,
+stateless services. These may be provided by multiple
+providers and may be distributed. Typically, transactions
+are short transactions where a service is called, does
+something then returns a result.
+
+SaaS factors:
+1.  Configurability How do you configure the software for the
+specific requirements of each organization?
+2.  Multi-tenancy How do you present each user of the
+software with the impression that they are working with
+their own copy of the system while, at the same time,
+making efficient use of system resources?
+3. Scalability How do you design the system so that it can
+be scaled to accommodate an unpredictably large
+number of users?
+
+Multi-tenancy:
+- Multi-tenancy is a situation in which many different users
+access the same system and the system architecture is
+defined to allow the efficient sharing of system
+- It must appear to each user that they have the sole use
+of the system.
+- Multi-tenancy involves designing the system so that
+there is an absolute separation between the system
+functionality and the system data
+
+Scalability
+- Develop applications where each component is implemented
+as a simple stateless service that may be run on any server.
+- Design the system using asynchronous interaction so that the
+application does not have to wait for the result of an
+interaction (such as a read request).
+- Manage resources, such as network and database
+connections, as a pool so that no single server is likely to run
+out of resources.
+- Design your database to allow fine-grain locking. That is, do
+not lock out whole records in the database when only part of a
+record is in use.
+
+### **Sommerville Chapter 28 Architectures*
+Use of application architectures
+- As a starting point for architectural design.
+- As a design checklist.
+- As a way of organising the work of the
+development team.
+- As a means of assessing components for
+reuse.
+- As a vocabulary for talking about application
+types.
+
+Application types:
+- Data processing applications
+  - Data driven applications that process data in batches
+without explicit user intervention during the processing.
+- Transaction processing applications
+  - Data-centred applications that process user requests
+and update information in a system database.
+- Event processing systems
+  - Applications where system actions depend on
+interpreting events from the system’s environment
+- Language processing systems
+  - Applications where the users’ intentions are specified in
+a formal language that is processed and interpreted by
+the system.
+
+Examples:
+
+- Data processing systems
+  - Billing systems;
+  - Payroll systems.
+- Transaction processing systems
+  - E-commerce systems;
+  - Reservation systems.
+- Event processing systems
+  - Word processors;
+  - Real-time systems.
+- Language processing systems
+  - Compilers;
+  - Command interpreters.
+
+Data processing system:
+- input ->process->output
+
+Transaction processing systems:
+- Process user requests for information from a
+database or requests to update the database.
+- Transaction management middleware or
+teleprocessing monitors handle
+communications with different terminal types
+(e.g. ATMs and counter terminals), serialises
+data and sends it for processing.
+
+Information systems architecture:
+- Information systems have a generic
+architecture that can be organised as a
+layered architecture.
+- Layers include:
+  - The user interface
+  - User communications
+  - Information retrieval
+  - System database
+- Example: LIBSYS architecture
+
+Resource Allocation systems:
+Systems that manage a fixed amount of some
+resource (football game tickets, books in a
+bookshop, etc.) and allocate this to users
 
 ## _Week 4 Monday 4/23/2018 Mc 4 5 6, Som 7 16 18_
 ---
+### **Sommerville Chapter 7 Design and Implementation*
+now u can buy off the shelf systems (COTS)
+Design Patterns
+Structural Design Pattern
+- Composite
+  - tree structure. each node can do same thing as leaf
+  - all electronics so all have a price
+- Adapter - Pen example
+  - Interface was Pen, LegacyClass was PilotPen
+  - PenAdapter implements Pen and then had a PilotPen object as attribute
+  - Pen p = new PilotPen()
+- Bridge
+  - ColorImplementer and ShapeImplementation
+  - colorit()
+- Facade
+  - the facade class calls all the different classes and does the concrete shit
+  - this way u don't call a ton of different classes
+  - facade pattern abstracts details away from developer and makes code easier to use. The Factory and Abstract Factory both deal with instantiating a related set of classes based on certain parameters used when the call to the Factory is made.
+- Strategy
+  - Context - interface to outside world
+  - Strategy - common interface that the actual concrete algorithm classes implement
+  - concrete strategy - actual implementation of the algorithm
+- Observer
+  - client tells observer if something changes
+- Factory
+  - OS example
+- Abstract Factory
+  - like factory but everything is encapsulated
+    - the method that orders the object
+    - the factories that build the object
+    - final objects
+    - final objects that contain objects that use strategy pattern
+  - so like factory pattern but instead of returning a new concrete object of a particular class you return an abstract class and then the concrete classes are under that abstract class. so its one more level of abstract class than factory pattern
+  - abstract factory makes concrete factories
 
+Implementation Issues:
+- _Reuse_: Most modern software is constructed by reusing existing
+components or systems. When you are developing software, you
+should make as much use as possible of existing code.
+- _Configuration management_: During the development process,
+you have to keep track of the many different versions of each
+software component in a configuration management system.
+- _Host-target development_: Production software does not usually
+execute on the same computer as the software development
+environment. Rather, you develop it on one computer (the host
+system) and execute it on a separate computer (the target
+system).
+
+Open Source:
+- Linux OS is Open source
+- open source developed more cheaply
+- Legally, the developer of the code (either a company or an
+individual) still owns the code. They can place restrictions on
+how it is used by including legally binding conditions in an open
+source software license.
+
+### **Sommerville Chapter 16 Component-based software engineering*
+- Components are more abstract than object classes and
+can be considered to be stand-alone service providers.
+They can exist as stand-alone entities.
+
+CBSE Essentials:
+- Independent components specified by their interfaces
+- Component standards to facilitate component
+integration.
+- Middleware that provides support for component interoperability.
+- A development process that is geared to reuse
+
+Apart from the benefits of reuse, CBSE is based on
+sound software engineering design principles:
+- Components are independent so do not interfere with each
+other;
+- Component implementations are hidden;
+- Communication is through well-defined interfaces;
+- One components can be replaced by another if its interface is
+maintained;
+- Component infrastructures offer a range of standard services.
+
+Several competing component standards
+
+- Component is stand-alone
+- Component requires and provides interface.
+- accessed through RPC, usually has URL
+- middleware support: To use services provided by a model, components are deployed in a _container_. This is a set of interfaces used
+to access the service implementations.
+- There is a trade-off between reusability and usability
+  - The more general the interface, the greater the reusability but
+it is then more complex and hence less usable.
+
+Legacy systems:
+- Existing legacy systems that fulfil a useful business
+function can be re-packaged as components for reuse.
+- Worth it! even though costly
+
+Component Identification issues:
+- Trust. do u trust supplier
+- requirements
+- validation
+
+Types of component composition:
+- Sequential composition (1) where the composed
+components are executed in sequence. This involves
+composing the provides interfaces of each component.
+- Hierarchical composition (2) where one component calls
+on the services of another. The provides interface of one
+component is composed with the requires interface of
+another.
+- Additive composition (3) where the interfaces of two
+components are put together to create a new
+component. Provides and requires interfaces of
+integrated component is a combination of interfaces of
+constituent components.
+
+**- Glue code**: Code that allows components to work together
+
+### **Sommerville Chapter 18 Service-Oriented Architectures*
+SOA:
+- definition: a style of software design where services are provided to the other components by application components, through a communication protocol over a network
+- Services may execute on different computers from
+different service providers
+
+4 properties:
+1. logically represents a business activity with a specified outcome
+2. self contained
+3. black box for consumers
+4. may consist of other underlying services
+
+Benefits of SOA:
+- Services can be provided locally or outsourced to
+external providers
+- Services are language-independent
+- Investment in legacy systems can be preserved
+- Inter-organisational computing is facilitated through
+simplified information exchange
+
+Key Standards:
+- SOAP - message exchange standard that supports service communication
+- WSDL - standard allows a service interface and its bindings to be defined
+- WS-BPEL: standard for workflow languages used to define service composition
+
+- A critical distinction between a service and a component
+as defined in CBSE is that services are independent
+  - services do not require interface
+  - services rely on message-based communication with messages expressed in XML
+
+RESTful web services:
+
+- REST (REpresentational State Transfer) is an architectural
+style based on transferring representations of resources from
+a server to a client. basically use HTTP for web apps and do the post requests get requests bs
+-  The fundamental element in a RESTful architecture is a
+resource. Essentially, a resource is simply a data element such as
+a catalog, a medical record, or a document, such as this
+book chapter
+- Resource operations: POST =create, GET, PUT = update, DELETE
+- accessed with URL
+- response to GET may be multiple URLs
+
+Disadvantage of RESTful approach:
+- When a service has a complex interface and is not a
+simple resource, it can be difficult to design a set of
+RESTful services to represent this.
+- When a service has a complex interface and is not a
+simple resource, it can be difficult to design a set of
+RESTful services to represent this.
+- When a service has a complex interface and is not a
+simple resource, it can be difficult to design a set of
+RESTful services to represent this.
+
+Service Engineering:
+- The process of developing services for reuse in serviceoriented
+applications
+- The service has to be designed as a reusable
+abstraction that can be used in different systems.
+- Generally useful functionality associated with that
+abstraction must be designed and the service must be
+robust and reliable.
+- The service must be documented so that it can be
+discovered and understood by potential users.
+
+3 Stages: Service candidate identification, service design(SOAP or RESTful), service implement
+
+Service candidate identification involves understanding
+an organization’s business processes to decide which
+reusable services could support these processes.
+
+Catalog service
+
+Service interface design:
+- logical interface
+- SOAP
+  - For SOAP-based services, design the structure and organisation
+of the input and output messages. Notations such as the UML
+are a more abstract representation than XML
+  - The logical specification is converted to a WSDL description
+- REST
+  - Design how the required operations map onto REST operations
+and what resources are required.
+
+Service Implement:
+
+Workflow: WSBPEL is an XML-standard for workflow specification.
+However, WS-BPEL descriptions are long and
+unreadable. graphical workflow is alternative
 
 ## _Week 4 Wednesday 4/25/2018 Mc 20, Som 24 25_ Quality and Change Management
 ------------------------------------------------------
@@ -711,24 +1181,19 @@ CM activities:
 
 CM can be simple bug tracking to integrated environments that support all CM activities
 
-Agile needs CM - shared repo. everyone pull. everyone makes changes
-
 software product phases:
 1. development phases
 2. system testing phase
 3. release phase
 
-Often, several differnt versions of software being worked on at the same time
-
-<img src="https://image.slidesharecdn.com/ch25configurationmanagement-150102101915-conversion-gate02/95/ch25-configuration-management-9-638.jpg?cb=1420194310" width=400 height=300>
-
-In large projects, it is part of software quality management. QM team checks the changes
+Multi-version system dev: (large company) Often, several differnt versions of software being worked on at the same time
+Agile(small): shared repo
 
 #### *25.1 Version Management*
 process of keeping track of different versions of software components and systems in which these components are used
 
-Codeline vs Baseline
-**Codeline:** sequence of versions of source code, with later versions in the sequence derived from earlier versions.
+**Codeline:** sequence of versions of source code, with later versions in the sequence derived from earlier versions. Codelines normally apply to components of systems so
+that there are different versions of each component.
 
 **Baseline** definition of a specific system. already specifies what libraries used, configuration files, etc. important to recreate an individual version. may be specified with configuration language
 
@@ -738,7 +1203,7 @@ X.1.2 is component version. X is identifier
 
 VC system types:
 1. **Centralized:** single master repo maintains all versions
-2. **Distributed:** Multiple versions of the repo exist at same time. Git
+2. **Distributed:** Multiple versions of the repo exist at same time. Github
 
 Key features of both
 1. Version and release identification
@@ -803,8 +1268,8 @@ Steps in continuous integration: 25.2
 3. make changes
 4. ...
 
-Jenkins is a tool to support **continuous integration**
-Advantage of continuous integration:
+**continuous integration**
+Pros and Cons of continuous integration:
 - Allows conflicting changes between dev to be solved ASAP
 - Not always implementable
   - too large system = too long to build and test
@@ -818,8 +1283,7 @@ For large systems, use **daily build system**:
 
 Advantages of daily build:
   - chances of finding bugs early is incr.
-
-
+  -
 To not have to recompile nontouched code, master version and your changed version have signatures and they compare them
 
 2 types of **signatures**:
@@ -884,15 +1348,18 @@ to document, record specific versions of the source code, os and hardware
 
 1. Unit testing - tested in isolation from complete system. Can be done by 1 or more ppl
 2. Component testing - tested in isolation from complete system. Only done in team(s)
-3. Integration testin - testing how 2 component work together. Adds more and more until u get complete system
+3. Integration testing - testing how 2 component work together. Adds more and more until u get complete system
 4. Regression testing - Redo previous test case to find defect
 5. System testing - final test. test everything.
 
-**Black Box testing:** can't see inner workings of item being tested
-**White Box testing:** Can see. Ex. test your coder
+**Black Box testing:** can't see inner workings of item being tested. test functionality
+**White Box testing:** a method of testing software that tests internal structures or workings of an application,
+Ex. test your code
 
-**Debugging:** fix known error
-**Testing:** detect error
+_**Debugging:** fix known error vs
+**Testing:** detect error_
+
+### **Mc Chapter 22 Testing**
 
 ### *Role of Developer Testing in Software Quality*
 
@@ -1055,9 +1522,7 @@ Basically keep track of details of an error so you can esitmate whether your pro
 1. Hours to fix defect
 2. How severe the defect
 
-## **McConnell Chapter 22 Developer Testing**
-==============================================================================
-
+## **McConnell Chapter 29 Integration**
 **definitely look at each chart for each type of integration**
 
 ### *29.1 Importance of the Integration Approach*
@@ -1102,9 +1567,9 @@ Problems:
 top down by sections
 
 #### *Bottom-Up Integration*
-you write test drivers to exercise the low-level classes initially and add classes to the test-driver scafolding as they are developed
-Benefit: easy to locate error
-Problem: leaves integration of system interface until last, need to completely design system before starting integration
+- you write test drivers to exercise the low-level classes initially and add classes to the test-driver scafolding as they are developed
+- Benefit: easy to locate error
+- Problem: leaves integration of system interface until last, need to completely design system before starting integration
 
 #### *Sandwich Integration*
 do top then bot then mid
@@ -1145,7 +1610,6 @@ at least daily build
 helps u stay in sync with group
 
 ## **Sommerville Chapter 8 Software Testing**
-==============================================================================
 
 validation testing - does it perform correctly to test cases
 defect testing - test cases to expose defects
@@ -1204,11 +1668,42 @@ Types of errors
 2. Misunderstanding
 3. timing
 
-#### *8.1.4 System testing*
+Test driven development:
 
-=======
-# After Midterm
-------------------------
+Test-driven development (TDD) is an approach to program development in which you inter-leave testing
+and code development.
+
+Benefits:
+- Code coverage
+  - Every code segment that you write has at least one associated
+test so all code written has at least one test.
+- Regression testing
+  - A regression test suite is developed incrementally as a program
+is developed.
+- Simplified debugging
+  - When a test fails, it should be obvious where the problem lies.
+The newly written code needs to be checked and modified.
+- System documentation
+  - The tests themselves are a form of documentation that describe
+what the code should be doing.
+
+User Testing:
+- Alpha testing
+  - Users of the software work with the development team to test the
+software at the developer’s site.
+- Beta testing
+  - A release of the software is made available to users to allow
+them to experiment and to raise problems that they discover with
+the system developers.
+- Acceptance testing
+  - Customers test a system to decide whether or not it is ready to
+be accepted from the system developers and deployed in the
+customer environment. Primarily for custom systems.
+
+Testing can only show the presence of errors in a
+program. It cannot demonstrate that there are no
+remaining faults.
+
 ## _Week 6 Monday 05/07/2018 Mc 28 Som 22_
 ### *Chapter 28 McConnell Managing Construction Page 661*
 Good for developer to understand the issues that managers face
@@ -1287,7 +1782,7 @@ Lots of improvement comes from a good productive environment
 #### *28.6 Managing your manager*
 don't be an idiot. plant an idea inside ur manager. lmao
 
-### *Chapter 22 Developer Testing Page 499*
+### *Sommerville Chapter 22 Developer Testing Page 499*
 Software engineering differences with other Engineering
 - product is intangible
 - large software projects are often "one-off"
@@ -1337,9 +1832,6 @@ He thinks right number of risks to monitor depends on project
 ##### 22.1.4 Risk monitoring
 do it regularly. staff morale. relationships. turnover.
 
-#### *22.2 Managing People*
-don't be a dick
-
 ##### *22.2.1 motivating people*
 - give them a social space, satisfy their esteem, and give them demanding but not impossible tasks
 - Maslow's model of motivation but he doesn't like that it takes an exclusively personal viewpoint on motivation. doesn't take into account they like being part of that company
@@ -1368,7 +1860,7 @@ Barrier to this is remote members
 
 ## _Week 6 Wednesday 05/09/2018 Mc 3.6,27 Som 23_
 
-### _3.6 Amount of Time to Spend on Upstreaam Prerequisites_
+### _3.6 Amount of Time to Spend on Upstream Prerequisites_
 - generally 10-20% of effort and 20-30% of schedule to requirements...
 
 ### _Chapter 27 How Program Size Affects Construction_
