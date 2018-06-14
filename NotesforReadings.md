@@ -2422,10 +2422,11 @@ Software product lines are designed to be reconfigurable
 Design-time configuration vs deployment-time configuration
 - design-time configuration is used when it is impossible to use the existing deployment-time configuration facilities in a system to develop a new system version
 
-COTS are applications system that are developed for an individual customer
+Random acronyms:
+- COTS are applications system that are developed for an individual customer
 configurable application systems are generic application systems that may be designed to support a particular business type, activity, or enterprise...
-ERP - large-scale integrated systems designed  to support business practices such as orderin, invoicing, ...
-CRM - customer relationship management
+- ERP - large-scale integrated systems designed  to support business practices such as orderin, invoicing, ...
+- CRM - customer relationship management
 
 Integrated application systems include two or more applications systems or legacy systems
 
